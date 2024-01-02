@@ -1,0 +1,129 @@
+nav {
+    width: 97%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.theme-light .navbar-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+    background-color: #ffff;
+}
+
+.theme-light .navbar-main nav {
+    width: 97%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.theme-light .navbar-main nav .display-switch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.7rem;
+    border-radius: 6px;
+    padding: 0.25rem 0.4rem;
+    border: 2px solid #e6e7eb;
+    cursor: pointer;
+    color: #373737;
+    box-shadow: 0 0 8px 0 #0000001a;
+}
+
+.theme-light .navbar-main nav .display-switch .switch-icon {
+    transform: rotate(270deg);
+    color: #8D8D8D;
+    font-size: 1rem;
+}
+
+.theme-light .navbar-main nav .display-switch span {
+    font-size: 1rem;
+}
+
+.theme-light .navbar-main nav .display-switch .dropdown-icon {
+    font-size: 1rem;
+    color: #8D8D8D;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(0deg);
+}
+
+.theme-light .navbar-main nav .display-switch .dropdown-icon.rotate {
+    transform: rotate(180deg);
+}
+
+.theme-light .navbar-main nav .theme-switch {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: large;
+    color: #373737;
+}
+
+.theme-dark .navbar-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+    background-color: #161B22;
+}
+
+.theme-dark .navbar-main nav {
+    width: 97%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.theme-dark .navbar-main nav .display-switch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.7rem;
+    border-radius: 6px;
+    padding: 0.25rem 0.4rem;
+    border: 2px solid #4a4a4a;
+    cursor: pointer;
+    color: #ebebeb;
+    box-shadow: 0 0 8px 0 #ffffff22;
+}
+
+.theme-dark .navbar-main nav .display-switch .switch-icon {
+    transform: rotate(270deg);
+    color: #8D8D8D;
+    font-size: 1rem;
+}
+
+.theme-dark .navbar-main nav .display-switch span {
+    font-size: 1rem;
+}
+
+.theme-dark .navbar-main nav .display-switch .dropdown-icon {
+    font-size: 1rem;
+    color: #8D8D8D;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(0deg);
+}
+
+.theme-dark .navbar-main nav .display-switch .dropdown-icon.rotate {
+    transform: rotate(180deg);
+}
+
+.theme-dark .navbar-main nav .theme-switch {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: large;
+    color: #ebebeb;
+}

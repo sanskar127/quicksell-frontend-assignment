@@ -1,18 +1,16 @@
 import React, { useContext } from 'react'
-import { useTheme } from '../context/ThemeContext'
-import { display, lighttheme, darktheme } from '../components/Icons'
+import { display, dropdown } from '../components/Icons'
 import './stylesheet.css'
 
 const Navbar = () => {
-  const { theme, toggleTheme } = useTheme()
   return (
-    <nav className={`nav-${theme}`}>
+    <nav className="nav">
       <div className="nav-main">
         <button className='display-btn'>
-          <img src={display} alt="Display" />
+          <img src={display} alt="Display" style={{transform: "rotate(270deg)"}} />
           Display
+          <img src={dropdown} alt="dropdown" />
         </button>
-        <button className='theme-btn' onClick={toggleTheme}><img src={theme === 'light'? darktheme : lighttheme} alt={theme === 'light'? 'dark' : 'light'} /></button>
       </div>
     </nav>
   )

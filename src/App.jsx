@@ -1,16 +1,14 @@
 import { useContext } from 'react'
-import './App.css'
 import { ApiContext } from './context/BackendContext'
+import Navbar from './components/Navbar'
+import './App.css'
 
 function App() {
   const data = useContext(ApiContext)
 
   return (
     <div className='App'>
-      <h1>
-      {JSON.stringify(data)}
-      {console.log(data)}
-      </h1>
+      <Navbar/>
     </div>
   )
 }

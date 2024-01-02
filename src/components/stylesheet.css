@@ -33,24 +33,84 @@ nav {
     box-shadow: 0 0 8px 0 #0000001a;
 }
 
-/* Ticket CSS */
+/* Card CSS */
 
-.ticket {
+.Card {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     padding: 0.8rem 1.2rem;
     width: 100%;
     border-radius: 6px;
-}
-
-.theme .ticket {
     background-color: #ffff;
     box-shadow: 0px 0px 8px 0px #0000001a;
     border: 1px solid #e6e7eb;
 }
 
-.theme .ticket .heading {
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     font-size: 1rem;
     color: #8D8D8D;
+}
+
+.subheading {
+    font-size: 1rem;
+    color: #373737;
+    font-weight: 500;
+    line-height: 102%;
+}
+
+.user-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    font-size: 0.5rem;
+    font-weight: 400;
+    color: white;
+    position: relative;
+}
+
+.available-icon {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    outline: 1px solid white;
+}
+
+.bottom-line {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 3px;
+}
+
+.priority {
+    border: 1px solid #e6e7eb;
+    border-radius: 3px;
+    padding: 0 2px;
+}
+
+.tag-wrapper {
+    font-size: 0.85rem;
+    padding: 1px 0px;
+    color: #8D8D8D;
+}
+
+.tag {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    border: 1px solid #e6e7eb;
+    border-radius: 3px;
+    padding: 1px 5px;
+    font-weight: 400;
 }

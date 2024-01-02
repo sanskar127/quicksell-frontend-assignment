@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className="nav">
       <div className="nav-main">
         <button className='display-btn'>
-          <img src={display} alt="Display" style={{transform: "rotate(270deg)"}} />
+          <img src={display} alt="Display" style={{transform: "rotate(270deg)", fill: "#373737"}} />
           Display
           <img src={dropdown} alt="dropdown" />
         </button>

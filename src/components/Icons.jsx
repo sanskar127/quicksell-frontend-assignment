@@ -13,6 +13,7 @@ import medium from '../assets/medium.svg'
 import menu from '../assets/menu.svg'
 import nopriority from '../assets/nopriority.svg'
 import plus from '../assets/plus.svg'
+import tag from '../assets/tag.svg'
 import todo from '../assets/todo.svg'
 import urgent from '../assets/urgent.svg'
 
@@ -32,6 +33,7 @@ export {
     menu,
     nopriority,
     plus,
+    tag,
     todo,
     urgent
 }

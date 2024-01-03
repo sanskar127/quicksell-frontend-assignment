@@ -57,6 +57,9 @@ nav {
 }
 
 .subheading {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
     font-size: 1rem;
     color: #373737;
     font-weight: 500;

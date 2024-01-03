@@ -1,9 +1,8 @@
 import React from 'react'
 import { menu, plus } from '../components/Icons'
 
-// Children = Card Components
 
-const GroupingColumn = ({ children, firstAttribute, secondAttribute, thirdAttribute }) => {
+const GroupingColumn = ({ children, firstAttribute, secondAttribute, count }) => {
 
     return (
         <section className='status-grouping-section-main'>
@@ -11,7 +10,7 @@ const GroupingColumn = ({ children, firstAttribute, secondAttribute, thirdAttrib
                 <div className="left">
                     <img src={firstAttribute} alt="left logo" />
                     <span className="status">{secondAttribute}</span>
-                    <span style={{ color: "gray" }}>{thirdAttribute}</span>
+                    <span style={{ color: "gray" }}>{count}</span>
                 </div>
                 <div className="right">
                     <img src={plus} alt="plus" />
@@ -19,7 +18,7 @@ const GroupingColumn = ({ children, firstAttribute, secondAttribute, thirdAttrib
                 </div>
             </div>
 
-            {children}
+            {children}  {/* Card Component */}
         </section>
     )
 }

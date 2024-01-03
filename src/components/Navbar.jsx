@@ -1,40 +1,45 @@
 import React, { useContext, useState } from 'react'
 import { display, dropdown } from '../components/Icons'
 import './stylesheet.css'
-import { DataContext } from '../context/ContextApi'
+import { DataContext, StoreContext } from '../context/ContextApi'
 
 const DropdownMenu = ({ label, list }) => {
   const [selectedOption, setSelectedOption] = useState(list[0])
+  const { state, setState } = useContext(StoreContext)
 
   const handleOptionChange = (event) => {
-      setSelectedOption(event.target.value)
+    setSelectedOption(event.target.value)
+    setState({
+      ...state,
+      [label]: event.target.value
+    })
   }
 
   return (
-      <div className='dropdown'>
-          <label>{label}</label>
-          <select value={selectedOption} onChange={handleOptionChange}>
-              {list.map((option, index) => (
-                  <option key={index} value={option}>
-                      {option}
-                  </option>
-              ))}
-          </select>
-      </div>
+    <div className='dropdown'>
+      <label>{label}</label>
+      <select value={selectedOption} onChange={handleOptionChange}>
+        {list.map((option, index) => (
+          <option key={index} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+    </div>
   )
 }
 
 const DisplayExpand = ({ state }) => {
   const listData = useContext(DataContext)
   return (
-      <div className={`display-main ${state === true ? "show" : ""}`}>
-          <DropdownMenu label="Grouping" list={listData.Grouping} />
-          <DropdownMenu label="Ordering" list={listData.Ordering} />
-      </div>
+    <div className={`display-main ${state === true ? "show" : ""}`}>
+      <DropdownMenu label="Grouping" list={listData.Grouping} />
+      <DropdownMenu label="Ordering" list={listData.Ordering} />
+    </div>
   )
 }
 
-const Navbar = ({}) => {
+const Navbar = ({ }) => {
   const [expand, setExpand] = useState(false)
 
   return (

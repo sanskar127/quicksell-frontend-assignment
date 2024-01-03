@@ -1,5 +1,5 @@
 import React from 'react'
-import { high, tag } from './Icons'
+import { High, Tag } from './Icons'
 
 const Card = ({ firstLine, secondLine, thirdLine }) => {
     return (
@@ -15,7 +15,7 @@ const Card = ({ firstLine, secondLine, thirdLine }) => {
                     {thirdLine}
                     <div className="tag-wrapper">
                         <div className="tag">
-                            <img src={tag} alt="tag" height="13px" />
+                            <img src={Tag} alt="tag" height="13px" />
                             <span>Feature Request</span>
                         </div>
                     </div>

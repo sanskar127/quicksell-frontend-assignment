@@ -4,7 +4,7 @@ import { DataContext, StoreContext } from './ContextApi';
 const StateContext = ({ children }) => {
     const listData = useContext(DataContext);
 
-    const [state, setState] = useState(() => {
+    const [display, setDisplay] = useState(() => {
         const savedState = JSON.parse(localStorage.getItem('viewState')) || {
             "Grouping": listData.Grouping[0],
             "Ordering": listData.Ordering[0]
@@ -13,11 +13,11 @@ const StateContext = ({ children }) => {
     });
 
     useEffect(() => {
-        localStorage.setItem('viewState', JSON.stringify(state));
-    }, [state]);
+        localStorage.setItem('viewState', JSON.stringify(display));
+    }, [display]);
 
     return (
-        <StoreContext.Provider value={{ state, setState }}>
+        <StoreContext.Provider value={{ display, setDisplay }}>
             {children}
         </StoreContext.Provider>
     );

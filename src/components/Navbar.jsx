@@ -1,21 +1,21 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { display, dropdown } from '../components/Icons';
+import { Display, Dropdown } from '../components/Icons';
 import './stylesheet.css';
 import { DataContext, StoreContext } from '../context/ContextApi';
 
 const DropdownMenu = ({ label, list }) => {
-  const { state, setState } = useContext(StoreContext);
-  const [selectedOption, setSelectedOption] = useState(state[label] || list[0]);
+  const { display, setDisplay } = useContext(StoreContext);
+  const [selectedOption, setSelectedOption] = useState(display[label] || list[0]);
 
   useEffect(() => {
-    setSelectedOption(state[label] || list[0]);
-  }, [state, label, list]);
+    setSelectedOption(display[label] || list[0]);
+  }, [display, label, list]);
 
   const handleOptionChange = (event) => {
     const selectedValue = event.target.value;
     setSelectedOption(selectedValue);
-    setState({
-      ...state,
+    setDisplay({
+      ...display,
       [label]: selectedValue,
     });
   };
@@ -49,17 +49,17 @@ const Navbar = () => {
   const { state } = useContext(StoreContext);
 
   useEffect(() => {
-    setExpand(state.expand || false);
-  }, [state.expand]);
+    setExpand(state?.expand ?? false);
+  }, [state?.expand]);  
 
   return (
     <nav className='nav'>
       <div className='nav-main'>
         <div className='display-wrapper'>
           <button className='display-btn' onClick={() => setExpand((prevExpand) => !prevExpand)}>
-            <img src={display} alt='Display' style={{ transform: 'rotate(270deg)', fill: '#373737' }} />
+            <img src={Display} alt='Display' style={{ transform: 'rotate(270deg)', fill: '#373737' }} />
             <span>Display</span>
-            <img src={dropdown} alt='dropdown' />
+            <img src={Dropdown} alt='dropdown' />
           </button>
           <DisplayExpand state={expand} />
         </div>

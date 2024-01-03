@@ -1,5 +1,5 @@
 import React from 'react'
-import { menu, plus } from '../components/Icons'
+import { Menu, Plus } from '../components/Icons'
 
 
 const GroupingColumn = ({ children, firstAttribute, secondAttribute, count }) => {
@@ -13,8 +13,8 @@ const GroupingColumn = ({ children, firstAttribute, secondAttribute, count }) =>
                     <span style={{ color: "gray" }}>{count}</span>
                 </div>
                 <div className="right">
-                    <img src={plus} alt="plus" />
-                    <img src={menu} alt="menu" />
+                    <img src={Plus} alt="plus" />
+                    <img src={Menu} alt="menu" />
                 </div>
             </div>
 

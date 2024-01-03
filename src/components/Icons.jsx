@@ -1,39 +1,35 @@
-import backlog from '../assets/backlog.svg'
-import cancelled from '../assets/cancelled.svg'
-import lighttheme from '../assets/lighttheme.svg'
-import darktheme from '../assets/darktheme.svg'
-import display from '../assets/display.svg'
-import done from '../assets/done.svg'
-import dropdown from '../assets/dropdown.svg'
-import featurerequest from '../assets/featurerequest.svg'
-import high from '../assets/high.svg'
-import inprogress from '../assets/inprogress.svg'
-import low from '../assets/low.svg'
-import medium from '../assets/medium.svg'
-import menu from '../assets/menu.svg'
-import nopriority from '../assets/nopriority.svg'
-import plus from '../assets/plus.svg'
-import tag from '../assets/tag.svg'
-import todo from '../assets/todo.svg'
-import urgent from '../assets/urgent.svg'
+import Backlog from '../assets/backlog.svg';
+import Cancelled from '../assets/cancelled.svg';
+import Display from '../assets/display.svg';
+import Done from '../assets/done.svg';
+import Dropdown from '../assets/dropdown.svg';
+import FeatureRequest from '../assets/featurerequest.svg';
+import High from '../assets/high.svg';
+import InProgress from '../assets/inprogress.svg';
+import Low from '../assets/low.svg';
+import Medium from '../assets/medium.svg';
+import Menu from '../assets/menu.svg';
+import NoPriority from '../assets/nopriority.svg';
+import Plus from '../assets/plus.svg';
+import Tag from '../assets/tag.svg';
+import Todo from '../assets/todo.svg';
+import Urgent from '../assets/urgent.svg';
 
 export {
-    backlog,
-    cancelled,
-    lighttheme,
-    darktheme,
-    display,
-    done,
-    dropdown,
-    featurerequest,
-    high,
-    inprogress,
-    low,
-    medium,
-    menu,
-    nopriority,
-    plus,
-    tag,
-    todo,
-    urgent
-}
+    Backlog,
+    Cancelled,
+    Display,
+    Done,
+    Dropdown,
+    FeatureRequest,
+    High,
+    InProgress,
+    Low,
+    Medium,
+    Menu,
+    NoPriority,
+    Plus,
+    Tag,
+    Todo,
+    Urgent
+};

@@ -5,6 +5,7 @@ import './App.css'
 import GroupingColumn from './components/GroupingColumn'
 import Card from './components/Card'
 import { backlog, cancelled, done, inprogress, todo } from './components/Icons'
+import ExpandedContainer from './components/ExpandedContainer'
 
 function App() {
   const backend = useContext(ApiContext)
@@ -37,6 +38,7 @@ function App() {
         
         <GroupingColumn firstAttribute={cancelled} secondAttribute="Cancelled" thirdAttribute="0">
         </GroupingColumn>
+        <ExpandedContainer/>
       </div>
     </div>
   )

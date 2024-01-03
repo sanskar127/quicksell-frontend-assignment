@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { display, dropdown } from '../components/Icons'
 import './stylesheet.css'
+import { DataContext } from '../context/ContextApi'
 
 const DropdownMenu = ({ label, list }) => {
   const [selectedOption, setSelectedOption] = useState(list[0])
@@ -24,15 +25,16 @@ const DropdownMenu = ({ label, list }) => {
 }
 
 const DisplayExpand = ({ state }) => {
+  const listData = useContext(DataContext)
   return (
       <div className={`display-main ${state === true ? "show" : ""}`}>
-          <DropdownMenu label="Grouping" list={["Status", "User", "Priority"]} />
-          <DropdownMenu label="Ordering" list={["Priority", "Title"]} />
+          <DropdownMenu label="Grouping" list={listData.Grouping} />
+          <DropdownMenu label="Ordering" list={listData.Ordering} />
       </div>
   )
 }
 
-const Navbar = () => {
+const Navbar = ({}) => {
   const [expand, setExpand] = useState(false)
 
   return (

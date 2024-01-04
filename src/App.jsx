@@ -4,6 +4,8 @@ import { Backlog, Cancelled, Done, High, InProgress, Low, Medium, NoPriority, To
 import { ApiContext, DataContext, StoreContext } from './context/ContextApi'
 import './App.css'
 import Status from './pages/Status'
+import User from './pages/User'
+import Priority from './pages/Priority'
 
 function App() {
   const {tickets, users} = useContext(ApiContext)
@@ -142,14 +144,14 @@ function App() {
 
   const { display, setDisplay } = useContext(StoreContext)
   const content = useContext(DataContext)
-  const Icons = [Backlog, Todo, InProgress, Done, Cancelled]
-  const Priority = [NoPriority, Low, Medium, High, Urgent]
 
   return (
     <div className='App'>
       <Navbar />
       <div className='app-main'>
-        <Status content={content} backendTickets={backend.tickets} backendUsers={backend.users} Icons={Icons} Priority={Priority} />
+        {/* <Status content={content} backendTickets={backend.tickets} backendUsers={backend.users} /> */}
+        {/* <User content={content} backendTickets={backend.tickets} backendUsers={backend.users} /> */}
+        <Priority content={content} backendTickets={backend.tickets} backendUsers={backend.users} />
       </div>
     </div>
   )

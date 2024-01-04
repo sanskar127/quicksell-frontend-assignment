@@ -4,18 +4,23 @@ import Card from '../components/Card'
 import UserDp from '../components/UserDp'
 import StatusLogo from '../components/StatusLogo'
 import PriorityLogo from '../components/PriorityLogo'
+import StatusLogoAlt from '../components/StatusLogoAlt'
 
-const Status = ({ content, backendTickets, backendUsers }) => {
+const Priority = ({ content, backendTickets, backendUsers }) => {
 
   return (
     <>
       {
-        content.Status.map((contentItem, contentIndex) => {
+        content.Priority.map((contentItem, contentIndex) => {
           let count = 0
           return (
-            <GroupingColumn key={contentItem} firstAttribute={<StatusLogo index={contentIndex} />} secondAttribute={contentItem} count={count} >
+            <GroupingColumn 
+            key={contentItem} 
+            firstAttribute={<PriorityLogo priority={contentIndex} />} 
+            secondAttribute={contentItem} 
+            count={count} >
               {
-                backendTickets.filter(filterItem => filterItem.status === contentItem).map(ticketsItem => {
+                backendTickets.filter(filterItem => filterItem.priority === contentItem).map(ticketsItem => {
                   const userDetails = backendUsers.find(item => item.id === ticketsItem.userId)
                   return (
                     <Card
@@ -45,4 +50,4 @@ const Status = ({ content, backendTickets, backendUsers }) => {
   )
 }
 
-export default Status
+export default Priority

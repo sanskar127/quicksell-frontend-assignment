@@ -1,6 +1,26 @@
 import React, { useState, useEffect } from 'react';
+import './stylesheet.css'
 
-const UserDp = ({ name }) => {
+const getColor = () => {
+
+  const randomRed = Math.floor(Math.random() * 256);
+  const randomGreen = Math.floor(Math.random() * 256);
+  const randomBlue = Math.floor(Math.random() * 256);
+
+  const hexComponent = (component) => {
+    const hex = component.toString(16);
+    return hex.length === 1 ? '0' + hex : hex;
+  };
+
+  const randomHexColor = '#' +
+    hexComponent(randomRed) +
+    hexComponent(randomGreen) +
+    hexComponent(randomBlue);
+
+  return randomHexColor;
+}
+
+const UserDp = ({ name, available }) => {
   const [formattedName, setFormattedName] = useState(name);
 
   useEffect(() => {
@@ -18,14 +38,15 @@ const UserDp = ({ name }) => {
     }
 
     if (words.length === 1) {
-        setFormattedName(words[0].charAt(0))
+      setFormattedName(words[0].charAt(0))
     }
 
   }, [name])
 
   return (
-    <div>
-      {formattedName}
+    <div className="user-icon" style={{ backgroundColor: `${getColor()}` }}>
+      <div> {formattedName} </div>
+      <div className="available-icon" style={{ backgroundColor: `${available === true ? "rgb(236, 194, 56)" : "gray"}` }} ></div>
     </div>
   );
 };

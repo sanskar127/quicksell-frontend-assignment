@@ -8,7 +8,7 @@ const GroupingColumn = ({ children, firstAttribute, secondAttribute, count }) =>
         <section className='status-grouping-section-main'>
             <div className="container-main">
                 <div className="left">
-                    <img src={firstAttribute} alt="left logo" />
+                    {firstAttribute}
                     <span className="status">{secondAttribute}</span>
                     <span style={{ color: "gray" }}>{count}</span>
                 </div>

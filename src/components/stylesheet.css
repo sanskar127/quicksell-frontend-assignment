@@ -97,9 +97,10 @@ nav {
 }
 
 .priority {
+    display: flex;
     border: 1px solid #e6e7eb;
     border-radius: 3px;
-    padding: 0 2px;
+    padding: 2px;
 }
 
 .tag-wrapper {

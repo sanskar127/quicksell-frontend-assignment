@@ -5,6 +5,8 @@ import Card from './components/Card'
 import { Backlog, Cancelled, Done, High, InProgress, Low, Medium, NoPriority, Todo, Urgent } from './components/Icons';
 import { ApiContext, DataContext, StoreContext } from './context/ContextApi';
 import './App.css';
+import UserDp from './components/UserDp';
+import GetRandomHexColor from './components/GetRandomColor';
 
 function App() {
   // const tickets = useContext(ApiContext).tickets;
@@ -155,13 +157,13 @@ function App() {
       <div className='app-main'>
         {
           content.Status.map((contentItem, contentIndex) => {
-            // const [count, setCount] = useState(0)
             let count = 0
             return (
               <GroupingColumn key={contentItem} firstAttribute={Icons[contentIndex]} secondAttribute={contentItem} count={count} >
                 {
                   tickets.filter(filterItem => filterItem.status === contentItem).map((ticketsItem, ticketsIndex) => {
                     // setCount(prevState => prevState + ticketsIndex)
+                    const userDetails = users.find(item => item.id === ticketsItem.userId)
                     return (
                       <Card
                         key={ticketsItem.id}
@@ -169,8 +171,8 @@ function App() {
                           <>
                             <span>{ticketsItem.id}</span>
                             <div className="user-icon" style={{ backgroundColor: `${profileColor}` }}>
-                              <div>{user}</div>
-                              <div className="available-icon" style={{ backgroundColor: `${isOnline === true ? "rgb(236, 194, 56)" : "gray"}` }} ></div>
+                              <UserDp name={userDetails.name} />
+                              <div className="available-icon" style={{ backgroundColor: `${userDetails.available === true ? "rgb(236, 194, 56)" : "gray"}` }} ></div>
                             </div>
                           </>
                         }
@@ -184,12 +186,12 @@ function App() {
                     )
                   })
                 }
+                {console.log(GetRandomHexColor)}
               </GroupingColumn>
             )
           })
         }
       </div>
-      {/* {console.log(tickets)} */}
     </div>
   );
 }

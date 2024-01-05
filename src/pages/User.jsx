@@ -19,7 +19,7 @@ const User = ({ content, backendTickets, backendUsers }) => {
                 <UserDp name={user.name} available={user.available} />
               }
               secondAttribute={user.name}
-              count={0}>
+              count={backendTickets.filter(filterItem => filterItem.userId === user.id).length}>
               {
                 backendTickets.filter(filterItem => filterItem.userId === user.id).map((ticket, ticketIndex) => {
                   const ticketDetails = backendTickets.find(findItem => findItem.userId === user.id)
@@ -30,7 +30,6 @@ const User = ({ content, backendTickets, backendUsers }) => {
                       secondLine={
                         <>
                           <StatusLogo index={ticketIndex} />
-                          {/* <StatusLogoAlt ticketStatus={ticketDetails.status} /> */}
                           <p>{ticket.title}</p>
                         </>
                       }

@@ -11,9 +11,8 @@ const Status = ({ content, backendTickets, backendUsers }) => {
     <>
       {
         content.Status.map((contentItem, contentIndex) => {
-          let count = 0
           return (
-            <GroupingColumn key={contentItem} firstAttribute={<StatusLogo index={contentIndex} />} secondAttribute={contentItem} count={count} >
+            <GroupingColumn key={contentItem} firstAttribute={<StatusLogo index={contentIndex} />} secondAttribute={contentItem} count={backendTickets.filter(filterItem => filterItem.status === contentItem).length} >
               {
                 backendTickets.filter(filterItem => filterItem.status === contentItem).map(ticketsItem => {
                   const userDetails = backendUsers.find(item => item.id === ticketsItem.userId)

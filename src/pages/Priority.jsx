@@ -12,13 +12,12 @@ const Priority = ({ content, backendTickets, backendUsers }) => {
     <>
       {
         content.Priority.map((contentItem, contentIndex) => {
-          let count = 0
           return (
             <GroupingColumn 
             key={contentItem} 
             firstAttribute={<PriorityLogo priority={contentIndex} />} 
             secondAttribute={contentItem} 
-            count={count} >
+            count={backendTickets.filter(filterItem => filterItem.priority === contentIndex).length} >
               {
                 backendTickets.filter(filterItem => filterItem.priority === contentIndex).map(ticket => {
                   const userDetails = backendUsers.find(item => item.id === ticket.userId)

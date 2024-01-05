@@ -20,24 +20,21 @@ const Priority = ({ content, backendTickets, backendUsers }) => {
             secondAttribute={contentItem} 
             count={count} >
               {
-                backendTickets.filter(filterItem => filterItem.priority === contentItem).map(ticketsItem => {
-                  const userDetails = backendUsers.find(item => item.id === ticketsItem.userId)
+                backendTickets.filter(filterItem => filterItem.priority === contentIndex).map(ticket => {
+                  const userDetails = backendUsers.find(item => item.id === ticket.userId)
                   return (
                     <Card
-                      key={ticketsItem.id}
+                      key={ticket.id}
                       firstLine={
                         <>
-                          <span>{ticketsItem.id}</span>
+                          <span>{ticket.id}</span>
                           <UserDp name={userDetails.name} available={userDetails.available} />
                         </>
                       }
                       secondLine={
-                        <p>{ticketsItem.title}</p>
+                        <p>{ticket.title}</p>
                       }
-                      thirdLine={
-                        <div className="priority"><PriorityLogo priority={ticketsItem.priority} /></div>
-                      }
-                      tag={ticketsItem.tag[0]}
+                      tag={ticket.tag[0]}
                     />
                   )
                 })
